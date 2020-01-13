@@ -152,6 +152,7 @@ let studentLastName = 'xyz';
 
 // function declaration gets hoisted
 sayHello();
+
 function sayHello() {
 	console.log('Hello there!');
 }
@@ -159,7 +160,7 @@ function sayHello() {
 // function expression doesn't get hoisted
 
 // greeting(); // ReferenceError: greeting is not defined
-const greeting = function() {
+const greeting = function () {
 	console.log('Hi!');
 };
 
@@ -215,7 +216,17 @@ const ironhacker = {
 };
 // What we’re doing is creating variables using the same names as the properties of our object.
 
-const { firstName, city, course: { type, bootcamp, start, end, careerChanger } } = ironhacker;
+const {
+	firstName,
+	city,
+	course: {
+		type,
+		bootcamp,
+		start,
+		end,
+		careerChanger
+	}
+} = ironhacker;
 
 console.log(`Name: ${firstName}.`);
 console.log(`Bootcamp: ${bootcamp}.`);
@@ -223,13 +234,16 @@ console.log(`Start date: ${start}.`);
 
 // Arrays
 
-const ironhackers = [ 'arthur', 'kevin', 'vero', 'kayla' ];
+const ironhackers = ['arthur', 'kevin', 'vero', 'kayla'];
 
-const [ uxers, ...developers ] = ironhackers;
+const [uxers, ...developers] = ironhackers;
 
 // console.log(developers);
 
-function printName({ firstName, lastName }) {
+function printName({
+	firstName,
+	lastName
+}) {
 	console.log(`Name isssss: ${firstName} ${lastName}`);
 }
 
@@ -240,11 +254,11 @@ let personObj = {
 
 // printName(personObj); //Name : John Doe
 
-const source = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function removeFirstTwo(list) {
 	// change code below this line
-	const [ a, b, ...arr ] = list; // change this
+	const [a, b, ...arr] = list; // change this
 	// change code above this line
 	return arr;
 }
@@ -275,8 +289,8 @@ const bill = {
 // console.log(adrian)
 // console.log(bill)
 
-const uxers = [ 'arthur', 'miakel' ];
-const devs = [ 'alex', 'fabricio' ];
+const uxers = ['arthur', 'miakel'];
+const devs = ['alex', 'fabricio'];
 
 // const allStudents = [];
 
@@ -286,7 +300,7 @@ const devs = [ 'alex', 'fabricio' ];
 
 // console.log(`All: ${allStudents}`);
 
-const all = [ ...uxers, ...devs ];
+const all = [...uxers, ...devs];
 // console.log(all);
 
 // rest:
@@ -304,3 +318,6 @@ function calcSum(someElements) {
 }
 
 calcSum(3, 5, 9);
+
+
+// See latest doc (Sandra's official notes for examples of other ways to get the same result.)
